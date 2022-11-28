@@ -1,19 +1,26 @@
 package org.example.controller;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.example.Service.EmployeeService;
+import org.example.dto.EmployeeDtoRq;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@Slf4j
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class MyControl {
 
-    @RequestMapping(path = "/employee", method = RequestMethod.GET)
-    public String employee() {
+    EmployeeService employeeService;
 
+    @PostMapping(path = "/createEmployee")
+    public Integer createEmployee(@RequestBody EmployeeDtoRq employeeDtoRq) {
+        return employeeService.createEmployee(employeeDtoRq);
     }
+
+    @GetMapping(path = "/getEmployee/{id}")
+    public EmployeeDtoRq getEmployee(@PathVariable Integer id) {
+        return employeeService.getEmployee(id);
+    }
+
+
 }

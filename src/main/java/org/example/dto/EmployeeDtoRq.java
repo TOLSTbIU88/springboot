@@ -1,11 +1,11 @@
-package org.example.entity;
+package org.example.dto;
 
 import lombok.Data;
 import lombok.NonNull;
 
 @Data
 @NonNull
-public class Employee {
+public class EmployeeDtoRq {
 
     private String name;
 
