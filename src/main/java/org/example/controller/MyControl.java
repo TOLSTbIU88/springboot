@@ -2,25 +2,42 @@ package org.example.controller;
 
 import lombok.AllArgsConstructor;
 import org.example.Service.EmployeeService;
+import org.example.dao.Dao;
 import org.example.dto.EmployeeDtoRq;
+import org.example.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class MyControl {
 
-    EmployeeService employeeService;
+    private EmployeeService service;
 
-    @PostMapping(path = "/createEmployee")
-    public Integer createEmployee(@RequestBody EmployeeDtoRq employeeDtoRq) {
-        return employeeService.createEmployee(employeeDtoRq);
+    @PostMapping(path = "/employee")
+    public void createEmployee(@RequestBody EmployeeDtoRq rq) {
+        service.createEmployee(rq);
     }
 
-    @GetMapping(path = "/getEmployee/{id}")
-    public EmployeeDtoRq getEmployee(@PathVariable Integer id) {
-        return employeeService.getEmployee(id);
+    @GetMapping(path = "/employee/{id}")
+    public Employee getEmployee(@PathVariable Integer id) {
+        return service.getEmployee(id);
     }
 
+    @PatchMapping(path = "/employee/{id}")
+    public Employee updateEmployee(@RequestBody EmployeeDtoRq rq, @PathVariable Integer id) {
+        return service.updateEmployee(id, rq);
+    }
 
+    @DeleteMapping(path = "/employee/{id}")
+    public Employee deleteEmployee(@PathVariable Integer id) {
+        return service.deleteEmployee(id);
+    }
+
+    @GetMapping(path = "/employees")
+    public Map<Integer, Employee> getEmployees() {
+        return Dao.getEmployees();
+    }
 }

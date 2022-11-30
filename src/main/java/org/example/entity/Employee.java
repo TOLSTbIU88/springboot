@@ -4,13 +4,13 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Data
-@NonNull
+
 public class Employee {
-
-    private String name;
-
-    private Integer age;
-
-    private Integer salary;
+    @NonNull
+    private String Name;
+    @NonNull
+    private Integer Age;
+    @NonNull
+    private Integer Salary;
 
 }
