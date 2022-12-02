@@ -6,10 +6,10 @@ import lombok.NonNull;
 @Data
 public class Employee {
     @NonNull
-    private String Name;
+    private String name;
     @NonNull
-    private Integer Age;
+    private Integer age;
     @NonNull
-    private Integer Salary;
+    private Integer salary;
 
 }
