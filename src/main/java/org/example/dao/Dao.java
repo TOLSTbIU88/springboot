@@ -25,9 +25,6 @@ public class Dao {
 
     public Employee updateEmployee(Integer id, Employee employee) {
         Employee updatedEmployee = employees.get(id);
-        updatedEmployee.setName(employee.getName());
-        updatedEmployee.setAge(employee.getAge());
-        updatedEmployee.setSalary(employee.getSalary());
         return updatedEmployee;
     }
 
