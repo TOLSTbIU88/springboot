@@ -1,7 +1,7 @@
 package org.example.controller;
 
 import lombok.AllArgsConstructor;
-import org.example.Service.EmployeeService;
+import org.example.service.EmployeeService;
 import org.example.dao.Dao;
 import org.example.dto.EmployeeDtoRq;
 import org.example.entity.Employee;

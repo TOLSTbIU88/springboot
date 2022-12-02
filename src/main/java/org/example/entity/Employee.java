@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Data
-
 public class Employee {
     @NonNull
     private String Name;

@@ -1,4 +1,4 @@
-package org.example.EmployeeMap;
+package org.example.employee_map;
 
 import org.example.dto.EmployeeDtoRq;
 import org.example.entity.Employee;

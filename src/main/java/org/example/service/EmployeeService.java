@@ -1,6 +1,6 @@
-package org.example.Service;
+package org.example.service;
 
-import org.example.EmployeeMap.EmployeeMapper;
+import org.example.employee_map.EmployeeMapper;
 import org.example.dao.Dao;
 import org.example.dto.EmployeeDtoRq;
 import org.example.entity.Employee;
